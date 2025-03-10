@@ -9,7 +9,7 @@ tags = {
 aci_sku = "Standard"
 
 # ACR 
-context_repo_path = "https://github.com/dimapovarchuk/task08/tree/main/application"
+context_repo_path = "https://github.com/dimapovarchuk/task08"
 acr_sku           = "Basic"
 
 # KeyVault
