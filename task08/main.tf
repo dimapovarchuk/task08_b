@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 data "azurerm_resource_group" "existing" {
-  name = var.rg_name
+  name = local.rg_name
 }
 
 # Update Resource Group
