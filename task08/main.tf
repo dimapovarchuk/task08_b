@@ -20,7 +20,7 @@ module "aci" {
   acr_login_server              = module.acr.acr_login_server
   acr_admin_username            = module.acr.acr_admin_username
   acr_admin_password            = module.acr.acr_admin_password
-  res_group                     = data.azurerm_resource_group.existing.name
+  res_group                     = azurerm_resource_group.this
   key_vault_id                  = module.keyvault.key_vault_id
   redis_hostname_secret_name    = var.redis_hostname_secret
   redis_primary_key_secret_name = var.redis_primary_key_secret
