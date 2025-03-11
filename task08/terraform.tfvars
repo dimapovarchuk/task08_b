@@ -1,6 +1,6 @@
 # General
 location    = "East US"
-name_prefix = "cmtr-01234560-mod8"
+name_prefix = "cmtr-82c341d6-mod8"
 tags = {
   Creator = "dmytro_povarchuk@epam.com"
 }
