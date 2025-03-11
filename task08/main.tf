@@ -5,7 +5,7 @@ data "azurerm_resource_group" "existing" {
 }
 
 # Update Resource Group
-resource "azurerm_resource_group" "resource_group" {
+  resource "azurerm_resource_group" "resource_group" {
   name     = data.azurerm_resource_group.existing.name
   location = data.azurerm_resource_group.existing.location
   tags     = var.tags
