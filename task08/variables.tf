@@ -58,8 +58,3 @@ variable "redis_hostname_secret" {
   description = "Name of the secret for the Redis hostname in Azure Key Vault."
   type        = string
 }
-
-variable "rg_name" {
-  type        = string
-  description = "The Name which should be used for this Resource Group"
-}
