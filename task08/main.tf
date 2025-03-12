@@ -1,8 +1,13 @@
 data "azurerm_client_config" "current" {}
 
-resource "azurerm_resource_group" "resource_group" {
-  name     = local.rg_name
-  location = var.location
+data "azurerm_resource_group" "existing" {
+  name = local.rg_name
+}
+
+# Update Resource Group
+resource "azurerm_resource_group" "this" {
+  name     = data.azurerm_resource_group.existing.name
+  location = data.azurerm_resource_group.existing.location
   tags     = var.tags
 }
 

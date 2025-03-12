@@ -1,6 +1,6 @@
 # General
 location    = "East US"
-name_prefix = "cmtr-0000000d-mod8"
+name_prefix = "cmtr-000000di-mod8"
 tags = {
   Creator = "dmytro_povarchuk@epam.com"
 }
@@ -9,8 +9,8 @@ tags = {
 aci_sku = "Standard"
 
 # ACR 
-#context_repo_path = "https://github.com/dimapovarchuk/task08#task08/application"
-context_repo_path = "https://github.com/dimapovarchuk/task08#main:task08/application"
+context_repo_path = "https://github.com/dimapovarchuk/task08#task08/application"
+#context_repo_path = "https://github.com/dimapovarchuk/task08#main:task08/application"
 acr_sku           = "Basic"
 
 # KeyVault
