@@ -29,6 +29,7 @@ variable "acr_sku" {
 variable "context_repo_path" {
   description = "Repository for building docker image"
   type        = string
+  default     = "https://github.com/dimapovarchuk/task08#main:task08/application"
 }
 
 variable "git_pat" {
