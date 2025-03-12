@@ -11,7 +11,7 @@ aci_sku = "Standard"
 # ACR 
 #context_repo_path = "https://github.com/dimapovarchuk/task08#task08/application"
 context_repo_path = "https://github.com/dimapovarchuk/task08#main:task08/application"
-acr_sku = "Basic"
+acr_sku           = "Basic"
 
 # KeyVault
 keyvault_sku_name = "standard"
