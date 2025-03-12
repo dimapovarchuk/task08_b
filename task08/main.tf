@@ -37,7 +37,7 @@ module "acr" {
 
   prefix                    = var.name_prefix
   acr_name                  = local.acr_name
-  resource_group_name       = azurerm_resource_group.resource_group.this.name
+  resource_group_name       = data.azurerm_resource_group.existing.name
   resource_group_location   = azurerm_resource_group.resource_group.location
   acr_sku                   = var.acr_sku
   context_repo_path         = var.context_repo_path
@@ -50,7 +50,7 @@ module "aks" {
 
   aks_name                = local.aks_name
   prefix                  = var.name_prefix
-  resource_group_name     = azurerm_resource_group.resource_group.this.name
+  resource_group_name     = data.azurerm_resource_group.existing.name
   resource_group_location = azurerm_resource_group.resource_group.location
   tenant_id               = data.azurerm_client_config.current.tenant_id
   key_vault_id            = module.keyvault.key_vault_id
@@ -68,7 +68,7 @@ module "keyvault" {
 
   keyvault_name           = local.keyvault_name
   keyvault_sku_name       = var.keyvault_sku_name
-  resource_group_name     = azurerm_resource_group.resource_group.this.name
+  resource_group_name     = data.azurerm_resource_group.existing.name
   resource_group_location = azurerm_resource_group.resource_group.location
   tenant_id               = data.azurerm_client_config.current.tenant_id
   current_user_object_id  = data.azurerm_client_config.current.object_id
@@ -80,7 +80,7 @@ module "redis_cache" {
 
   redis_name               = local.redis_name
   redis_sku_name           = var.redis_sku_name
-  resource_group_name      = azurerm_resource_group.resource_group.this.name
+  resource_group_name      = data.azurerm_resource_group.existing.name
   resource_group_location  = azurerm_resource_group.resource_group.location
   key_vault_id             = module.keyvault.key_vault_id
   redis_hostname_secret    = var.redis_hostname_secret
