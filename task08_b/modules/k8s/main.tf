@@ -38,11 +38,6 @@ resource "kubectl_manifest" "deployment" {
   ]
 }
 
-resource "time_sleep" "wait_after_deployment" {
-  depends_on      = [kubectl_manifest.deployment]
-  create_duration = "30s"
-}
-
 resource "kubectl_manifest" "service" {
   yaml_body = file("${path.root}/k8s-manifests/service.yaml")
 
@@ -55,14 +50,8 @@ resource "kubectl_manifest" "service" {
   }
 
   depends_on = [
-    kubectl_manifest.deployment,
-    time_sleep.wait_after_deployment
+    kubectl_manifest.deployment
   ]
-}
-
-resource "time_sleep" "wait_for_service" {
-  depends_on      = [kubectl_manifest.service]
-  create_duration = "60s"
 }
 
 data "kubernetes_service" "service" {
@@ -71,8 +60,5 @@ data "kubernetes_service" "service" {
     namespace = "default"
   }
 
-  depends_on = [
-    kubectl_manifest.service,
-    time_sleep.wait_for_service
-  ]
+  depends_on = [kubectl_manifest.service]
 }
